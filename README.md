@@ -5,8 +5,8 @@ Opinionated MVC Starter Kit
 
 Vision
 =======
-To help developers rapidly build ASP.NET MVC applications which are considered robust, and best practice. 
-To strike a balance between leveraging the cutting edge, and the stable ‘production ready’ level of quality  commercial software demand.
+To help developers rapidly build ASP.NET MVC applications which are considered robust and best practice. 
+To strike a balance between leveraging cutting edge and stable production ready quality commercial software.
 
 This is our core vision and commitment.
 
