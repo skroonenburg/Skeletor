@@ -18,7 +18,7 @@ The pointy stick
 ==================
 
 The reason for this project is it is a pain to reinvent the wheel and code this on every project. You get it for free
-with Skeletor. Skeletor is the works of Blair Davidson and Padgett Rowell who are both .NET developers.
+with Skeletor. Skeletor is the works of Blair Davidson, Hendry Luk and Padgett Rowell who are all .NET developers.
 
 Often you want to start some side project and have an idea, then you think about all the infrasture you have to 
 set up and cant be bothered. Thats how I feel most of the time, so I decided to bring what I think is good 
@@ -29,7 +29,7 @@ We are hoping to get contributions, patches and fixes from people out there. And
 in the project.
 
 We are not saying we are the worlds best developers but we think we are pretty ok, thus if you disagree or have 
-suggestions please get in contact with us on twitter, @loose_chainsaw, and give us your feedback and thoughts.
+suggestions please get in contact with us on twitter, @loose_chainsaw, @padgettrowell, @hendryluk, and give us your feedback and thoughts.
 
 Have fun with it.
 
