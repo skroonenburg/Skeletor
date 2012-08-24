@@ -60,6 +60,8 @@
     <Compile Include="Framework\RepositoryBase.cs" />
     <Compile Include="Framework\Entity.cs" />
     <Compile Include="Framework\IEntity.cs" />
+    <Compile Include="Framework\ValidationException.cs" />
+    <Compile Include="Help\Help.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

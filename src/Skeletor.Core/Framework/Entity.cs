@@ -3,15 +3,10 @@ using System.Collections.Generic;
 
 namespace Skeletor.Core.Framework
 {
-    public class Entity<TKey> : IEntity<TKey>, IEquatable<Entity<TKey>>
+    public abstract class Entity<TKey> : IEntity<TKey>, IEquatable<Entity<TKey>>
     {
        
         protected Entity(){} 
-
-        protected Entity(TKey identity)
-        {
-            Identity = identity;
-        }
 
         public virtual void Delete()
         {
@@ -46,7 +41,7 @@ namespace Skeletor.Core.Framework
             return !Equals(left, right);
         }
 
-        public virtual TKey Identity { get; private set; }
+        public virtual TKey Identity { get; set; }
         public virtual bool IsDeleted { get; private set; }
     }
 }
