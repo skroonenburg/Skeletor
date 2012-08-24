@@ -1,7 +1,7 @@
 Skeletor
 ========
-
 Opinionated MVC Starter Kit
+http://loosechainsaw.github.com/Skeletor/
 
 Vision
 =======
@@ -9,10 +9,6 @@ To help developers rapidly build ASP.NET MVC applications which are considered r
 To strike a balance between leveraging cutting edge and stable production ready quality commercial software.
 
 This is our core vision and commitment.
-
-Project Home
-=========
-http://loosechainsaw.github.com/Skeletor/
 
 Features
 =========
