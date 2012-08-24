@@ -5,13 +5,10 @@ Opinionated MVC Starter Kit
 
 Vision
 =======
-To help the majority of developers build good shipable software. We are not interested in technologies that cool for
-cool sake or serve a small number of users, like RavenDb. Not to say they are not good technologies, we want 
-to build tech that everyone can use, and that no one will ever get fired for using :) This is our core vision and commitment.
+To help developers rapidly build ASP.NET MVC applications which are considered robust, and best practice. 
+To strike a balance between leveraging the cutting edge, and the stable ‘production ready’ level of quality  commercial software demand.
 
-This doesnt mean its not cool technology, its just more risk adverse. We want you to feel comfortable using
-well known and accepted current best practice no something new and shinny.
-
+This is our core vision and commitment.
 
 Features
 =========
@@ -19,14 +16,13 @@ Features
 2. Modern UI based on Twitter bootstrap
 3. Assist with modern web developement tasks like dialogs, grids etc
 4. Build automation out of the box
-5. Testing and unit testing guidlines and examples
+5. Testing and unit testing guidelines and examples
 6. Lean controllers and sexy routes
-6. Dependency injection out of the box which is convention based
+6. Convention based dependency injection out of the box
 7. Interceptors to help with cross cutting concerns
 
 The pointy stick
 ================== 
-
 The reason for this project is it is a pain to reinvent the wheel and code this on every project. You get it for free
 with Skeletor. Skeletor is the works of Blair Davidson, Hendry Luk and Padgett Rowell who are all .NET developers.
 
