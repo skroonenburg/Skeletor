@@ -3,6 +3,16 @@ Skeletor
 
 Opinionated MVC Starter Kit
 
+Vision
+=======
+To help the majority of developers build good shipable software. We are not interested in technologies that cool for
+cool sake or serve a small number of users, like RavenDb. Not to say they are not good technologies, we want 
+to build tech that everyone can use, and that no one will ever get fired for using :) This is our core vision and commitment.
+
+This doesnt mean its not cool technology, its just more risk adverse. We want you to feel comfortable using
+well known and accepted current best practice no something new and shinny.
+
+
 Features
 =========
 1. Clean architecture
