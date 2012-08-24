@@ -10,6 +10,10 @@ To strike a balance between leveraging cutting edge and stable production ready 
 
 This is our core vision and commitment.
 
+Project Home
+=========
+http://loosechainsaw.github.com/Skeletor/
+
 Features
 =========
 1. Clean architecture
