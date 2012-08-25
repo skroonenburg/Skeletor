@@ -1,11 +1,10 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 using Skeletor.Core.Framework;
 
 namespace Skeletor.Core.UnitTests
 {
-
     [TestFixture]
-    public class WhenCreatingAValidationExceptionObject
+    public class when_creating_a_new_validation_exception_object
     {
         private ValidationException exception;
 
