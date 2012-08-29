@@ -30,6 +30,8 @@ obj/
 [Dd]ebug*/
 [Rr]elease*/
 Ankh.NoLoad
+#NCrunch
+*ncrunch*
 
 #InstallShield
 [Ss]ingle[Ii]mage/
