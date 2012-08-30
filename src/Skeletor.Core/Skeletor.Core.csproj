@@ -55,14 +55,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Framework\Aggregate.cs" />
+    <Compile Include="Framework\AuditAttribute.cs" />
+    <Compile Include="Framework\EventAttribute.cs" />
     <Compile Include="Framework\IRetrieveRepository.cs" />
     <Compile Include="Framework\IStoreRepository.cs" />
+    <Compile Include="Framework\MissingTransactionAttributeException.cs" />
     <Compile Include="Framework\RepositoryBase.cs" />
     <Compile Include="Framework\Entity.cs" />
     <Compile Include="Framework\IEntity.cs" />
+    <Compile Include="Framework\TransactionAttribute.cs" />
+    <Compile Include="Framework\UsabilityExtensions.cs" />
     <Compile Include="Framework\ValidationError.cs" />
     <Compile Include="Framework\ValidationException.cs" />
     <Compile Include="Help\Help.cs" />
+    <Compile Include="Infrastructure\CoreInstaller.cs" />
+    <Compile Include="Infrastructure\NHibernateAuditingInterceptor.cs" />
+    <Compile Include="Infrastructure\NHibernateTransactionInterceptor.cs" />
+    <Compile Include="Infrastructure\ServiceInterceptorSelector.cs" />
+    <Compile Include="Infrastructure\ServicesProxyGenerationHook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

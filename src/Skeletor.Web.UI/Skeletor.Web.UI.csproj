@@ -118,6 +118,7 @@
     <Compile Include="Infrastructure\IoC\IoC.cs" />
     <Compile Include="Infrastructure\IoC\IoCBootStrap.cs" />
     <Compile Include="Infrastructure\IoC\WindsorControllerFactory.cs" />
+    <Compile Include="Infrastructure\Javascript\Commander.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

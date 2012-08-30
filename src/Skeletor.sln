@@ -11,8 +11,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skeletor.Core.IntegrationTe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skeletor.Web.UI.UnitTests", "Skeletor.Web.UI.UnitTests\Skeletor.Web.UI.UnitTests.csproj", "{4EE05503-2691-4A5C-B504-381B1F64E582}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Skeletor.Web.Security", "Skeletor.Web.Security\Skeletor.Web.Security.csproj", "{E55F11A0-AA6B-44E5-87C6-36128583B9C3}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,10 +37,6 @@ Global
 		{4EE05503-2691-4A5C-B504-381B1F64E582}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4EE05503-2691-4A5C-B504-381B1F64E582}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4EE05503-2691-4A5C-B504-381B1F64E582}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E55F11A0-AA6B-44E5-87C6-36128583B9C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E55F11A0-AA6B-44E5-87C6-36128583B9C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E55F11A0-AA6B-44E5-87C6-36128583B9C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E55F11A0-AA6B-44E5-87C6-36128583B9C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
