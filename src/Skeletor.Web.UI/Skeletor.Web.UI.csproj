@@ -118,7 +118,16 @@
     <Compile Include="Infrastructure\IoC\IoC.cs" />
     <Compile Include="Infrastructure\IoC\IoCBootStrap.cs" />
     <Compile Include="Infrastructure\IoC\WindsorControllerFactory.cs" />
-    <Compile Include="Infrastructure\Javascript\Commander.cs" />
+    <Compile Include="Infrastructure\Javascript\Invocation.cs" />
+    <Compile Include="Infrastructure\Javascript\InvocationArgument.cs" />
+    <Compile Include="Infrastructure\Javascript\JsonCommandGenerator.cs" />
+    <Compile Include="Infrastructure\Javascript\IHandleCommands.cs" />
+    <Compile Include="Infrastructure\Javascript\IJQueryCommands.cs" />
+    <Compile Include="Infrastructure\Javascript\IJsonCommandGenerator.cs" />
+    <Compile Include="Infrastructure\Javascript\JsonBuilderInterceptor.cs" />
+    <Compile Include="Infrastructure\Javascript\JsonInterfaceGenerator.cs" />
+    <Compile Include="Infrastructure\Javascript\JsonRecorder.cs" />
+    <Compile Include="Infrastructure\Javascript\ProxyCache.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
