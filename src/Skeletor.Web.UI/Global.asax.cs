@@ -20,6 +20,7 @@ namespace Skeletor.Web.UI
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             sessionFactory = NhibernateBootstrap.Configure();
             IoC.Container = IoCBootStrap.Configure();
+            ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(IoC.Container));
         }
     }
 }

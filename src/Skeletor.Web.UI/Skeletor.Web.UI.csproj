@@ -39,6 +39,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AppHarbor.Web.Security">
+      <HintPath>..\..\lib\AppHarbor.Web.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="BCrypt.Net">
+      <HintPath>..\..\lib\BCrypt.Net.dll</HintPath>
+    </Reference>
     <Reference Include="Castle.Core">
       <HintPath>..\packages\Castle.Core.3.1.0\lib\net35\Castle.Core.dll</HintPath>
     </Reference>
@@ -120,6 +126,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -137,8 +144,11 @@
     <Compile Include="Infrastructure\Javascript\JsonInterfaceGenerator.cs" />
     <Compile Include="Infrastructure\Javascript\JsonRecorder.cs" />
     <Compile Include="Infrastructure\Javascript\ProxyCache.cs" />
+    <Compile Include="Infrastructure\MVC\SkeletorViewEngine.cs" />
+    <Compile Include="Infrastructure\MVC\WindsorControllerFactory.cs" />
     <Compile Include="Infrastructure\Nhibernate\NhibernateBootstrap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\FilterConfig.cs" />
@@ -151,7 +161,9 @@
     <Content Include="img\glyphicons-halflings.png" />
     <Content Include="js\bootstrap.js" />
     <Content Include="js\bootstrap.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -162,7 +174,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -181,6 +192,9 @@
       <Project>{13f91cc5-d5d3-4bd1-8efb-24b9a28404b6}</Project>
       <Name>Skeletor.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Login\Index.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

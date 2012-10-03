@@ -1,8 +1,11 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Web;
 using FluentNHibernate.Cfg;
+using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using Skeletor.Core.Help;
 
@@ -16,7 +19,10 @@ namespace Skeletor.Web.UI.Infrastructure.Nhibernate
 
             return Fluently.Configure()
                 .Mappings(m =>
-                    m.FluentMappings.AddFromAssemblyOf<Help>())  
+                    m.FluentMappings.AddFromAssemblyOf<Help>())
+                    .Database(MsSqlConfiguration.MsSql2008
+                    .ConnectionString( ConfigurationManager.ConnectionStrings["default"].ConnectionString)
+                    .ShowSql)
                  .BuildSessionFactory();
         }
 
