@@ -62,10 +62,13 @@
     <Compile Include="Framework\AuditAttribute.cs" />
     <Compile Include="Framework\EventAttribute.cs" />
     <Compile Include="Framework\IActiveEntity.cs" />
+    <Compile Include="Framework\ICommand.cs" />
+    <Compile Include="Framework\ICommandHandler.cs" />
     <Compile Include="Framework\IRetrieveRepository.cs" />
     <Compile Include="Framework\IStoreRepository.cs" />
     <Compile Include="Framework\ISystemEntity.cs" />
     <Compile Include="Framework\MissingTransactionAttributeException.cs" />
+    <Compile Include="Framework\NameInUseException.cs" />
     <Compile Include="Framework\RepositoryBase.cs" />
     <Compile Include="Framework\Entity.cs" />
     <Compile Include="Framework\IEntity.cs" />
@@ -80,12 +83,19 @@
     <Compile Include="Infrastructure\ServiceInterceptorSelector.cs" />
     <Compile Include="Infrastructure\ServicesProxyGenerationHook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\CreateUserCommand.cs" />
+    <Compile Include="Security\CreateUserCommandHandler.cs" />
     <Compile Include="Security\Email.cs" />
+    <Compile Include="Security\ICreateUserCommandHandler.cs" />
+    <Compile Include="Security\IUserDomainService.cs" />
+    <Compile Include="Security\IUserRepository.cs" />
     <Compile Include="Security\LockedOut.cs" />
     <Compile Include="Security\Name.cs" />
     <Compile Include="Security\Password.cs" />
     <Compile Include="Security\User.cs" />
     <Compile Include="Security\UserAggregrateMap.cs" />
+    <Compile Include="Security\UserBuilder.cs" />
+    <Compile Include="Security\UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

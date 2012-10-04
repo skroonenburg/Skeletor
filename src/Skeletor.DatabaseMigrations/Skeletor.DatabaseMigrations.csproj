@@ -38,6 +38,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AggregateMigration.cs" />
     <Compile Include="CreatePermissionTable.cs" />
     <Compile Include="CreateRoleTable.cs" />
     <Compile Include="CreateUserRoleTable.cs" />
