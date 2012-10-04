@@ -9,9 +9,14 @@ BUILD_PATH = File.expand_path("build")
 TOOLS_PATH = File.expand_path("tools")
 TESTS_PATH = File.join(BUILD_PATH,"tests")
 NUNIT_PATH = File.join(TOOLS_PATH,"nunit")
+FLUENT_MIGRATE_PATH = File.join(TOOLS_PATH,"FluentMigrator")
 NUNIT_RUNNER = File.join(NUNIT_PATH,"nunit-console.exe")
 LIB_PATH = File.expand_path("lib")
-
+DATABASEMIGRATIONS_NAME = "#{SOLUTION_NAME}.DatabaseMigrations"
+DATABASEMIGRATIONS_FOLDER_PATH = File.join(SOURCE_FOLDER,DATABASEMIGRATIONS_NAME)
+MIGRATIONASSEMBLY = File.join(DATABASEMIGRATIONS_FOLDER_PATH,"bin\\" + CONFIGURATION + "\\Skeletor.DatabaseMigrations.dll") 
+FLUENTMIGRATOR = File.join(FLUENT_MIGRATE_PATH,"migrate.exe") 
+CONNECTIONSTRING = "Data Source=localhost;Initial Catalog=Grayskull;Integrated Security=true"
 
 task :default => :unittests
 
@@ -63,4 +68,11 @@ msbuild :build  => [:assemblyinfo] do |msb|
   msb.targets = [ :Clean, :Build ]
   msb.verbosity = "minimal"
   msb.solution = SOLUTION_FILE
+end
+
+fluentmigrator :migrate => [:build] do |migrator|
+    migrator.command = FLUENTMIGRATOR
+    migrator.provider = 'sqlserver2008'
+    migrator.target = MIGRATIONASSEMBLY
+    migrator.connection = CONNECTIONSTRING
 end

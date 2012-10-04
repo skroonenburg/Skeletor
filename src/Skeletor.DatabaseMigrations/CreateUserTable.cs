@@ -19,7 +19,7 @@ namespace Skeletor.DatabaseMigrations
         public override void Up()
         {
             Create.Table("User")
-                .WithColumn("UserId").AsGuid().NotNullable().PrimaryKey().Identity()
+                .WithColumn("UserId").AsInt().NotNullable().PrimaryKey()
                 .WithColumn("UserName").AsString(200).NotNullable()
                 .WithColumn("FirstName").AsString(200).NotNullable()
                 .WithColumn("LastnNme").AsString(200).NotNullable()
