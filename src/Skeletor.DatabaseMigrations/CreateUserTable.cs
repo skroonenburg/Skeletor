@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FluentMigrator;
+﻿using FluentMigrator;
 
 
 namespace Skeletor.DatabaseMigrations
 {
-
-    /// <summary>
-    /// By convention, attribute all migrations with the current date in the format yyyyMMddHHmm, e.g.201210031600
-    /// </summary>
 
     [Migration(201210031600)]
     public class CreateUserTable : Migration
@@ -19,16 +10,23 @@ namespace Skeletor.DatabaseMigrations
         public override void Up()
         {
             Create.Table("User")
-                .WithColumn("UserId").AsInt().NotNullable().PrimaryKey()
-                .WithColumn("UserName").AsString(200).NotNullable()
-                .WithColumn("FirstName").AsString(200).NotNullable()
-                .WithColumn("LastnNme").AsString(200).NotNullable()
-                .WithColumn("Email").AsString(255).NotNullable()
-                .WithColumn("IsSystem").AsBoolean().NotNullable().WithDefaultValue(false)
-                .WithColumn("CreatedByUserId").AsGuid().Nullable()
-                .WithColumn("CreatedUtcDate").AsDateTime().Nullable()
-                .WithColumn("ModifiedByUserId").AsGuid().Nullable()
-                .WithColumn("ModifiedUtcDate").AsDateTime().Nullable();
+                  .WithColumn("UserId").AsCustom("uniqueidentifier").PrimaryKey().WithDefault(SystemMethods.NewSequentialId)
+                  .WithColumn("UserName").AsString(200).NotNullable()
+                  .WithColumn("FirstName").AsString(200).NotNullable()
+                  .WithColumn("LastnNme").AsString(200).NotNullable()
+                  .WithColumn("Email").AsString(255).NotNullable()
+                  .WithColumn("IsSystem").AsBoolean().NotNullable().WithDefaultValue(false)
+                  .WithColumn("IsActive").AsBoolean().NotNullable().WithDefaultValue(false)
+                  .WithColumn("IsDeleted").AsBoolean().NotNullable().WithDefaultValue(false)
+                  .WithColumn("IsLockedOut").AsBoolean().NotNullable().WithDefaultValue(false)
+                  .WithColumn("LockoutDateTime").AsDateTime().Nullable()
+                  .WithColumn("Password").AsString(30).NotNullable()
+                  .WithColumn("Salt").AsString(100).NotNullable()
+                  .WithColumn("PasswordExpiry").AsDateTime().NotNullable()
+                  .WithColumn("CreatedByUserId").AsGuid().Nullable()
+                  .WithColumn("CreatedUtcDate").AsDateTime().Nullable()
+                  .WithColumn("ModifiedByUserId").AsGuid().Nullable()
+                  .WithColumn("ModifiedUtcDate").AsDateTime().Nullable();
         }
 
         public override void Down()

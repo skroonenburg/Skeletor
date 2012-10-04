@@ -38,6 +38,9 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreatePermissionTable.cs" />
+    <Compile Include="CreateRoleTable.cs" />
+    <Compile Include="CreateUserRoleTable.cs" />
     <Compile Include="CreateUserTable.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
