@@ -15,11 +15,11 @@ namespace Skeletor.Core.Security
             LockedOut = lockedOut;
         }
 
-        public Name Name { get; protected set; }
-        public Email EmailAddress { get; protected set; }
-        public Password Password { get; protected set; }
-        public LockedOut LockedOut { get; protected set; }
-        public bool IsActive { get; protected set; }
-        public bool IsSystem { get; protected set; }
+        public virtual Name Name { get; protected set; }
+        public virtual Email EmailAddress { get; protected set; }
+        public virtual Password Password { get; protected set; }
+        public virtual LockedOut LockedOut { get; protected set; }
+        public virtual bool IsActive { get; protected set; }
+        public virtual bool IsSystem { get; protected set; }
     }
 }

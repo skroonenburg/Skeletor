@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Configuration;
-using System.Linq;
-using System.Web;
+﻿using System.Configuration;
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
@@ -15,8 +10,6 @@ namespace Skeletor.Web.UI.Infrastructure.Nhibernate
     {
         public static ISessionFactory Configure()
         {
-            // load all models from the Skeletor.Core assembly that inherit from ClassMap
-
             return Fluently.Configure()
                 .Mappings(m =>
                     m.FluentMappings.AddFromAssemblyOf<Help>())
