@@ -39,6 +39,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateMigration.cs" />
+    <Compile Include="CreateAuditActionTypeTable.cs" />
+    <Compile Include="CreateAuditDetailTable.cs" />
+    <Compile Include="CreateAuditTable.cs" />
+    <Compile Include="EntityMigration.cs" />
+    <Compile Include="CreateRolePermissionTable.cs" />
     <Compile Include="CreatePermissionTable.cs" />
     <Compile Include="CreateRoleTable.cs" />
     <Compile Include="CreateUserRoleTable.cs" />

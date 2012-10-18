@@ -20,8 +20,8 @@ namespace Skeletor.DatabaseMigrations
                       .WithColumn("IsSystem").AsBoolean().NotNullable().WithDefaultValue(false)
                       .WithColumn("IsActive").AsBoolean().NotNullable().WithDefaultValue(false)
                       .WithColumn("IsLockedOut").AsBoolean().NotNullable().WithDefaultValue(false)
-                      .WithColumn("LockoutDateTime").AsDateTime().Nullable()
-                      .WithColumn("Password").AsString(30).NotNullable()
+                      .WithColumn("LastLockoutUtcDate").AsDateTime().Nullable()
+                      .WithColumn("PasswordHash").AsString(200).NotNullable()
                       .WithColumn("Salt").AsString(100).NotNullable()
                       .WithColumn("PasswordExpiry").AsDateTime().NotNullable();
         }

@@ -3,5 +3,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyCompany("Skeletor")]
 [assembly: AssemblyProduct("Skeletor")]
 [assembly: AssemblyCopyright("Blair Davidson, Padgett Rowell, Hendry Luk")]
-[assembly: AssemblyVersion("0.0.1.35")]
-[assembly: AssemblyFileVersion("0.0.1.35")]
+[assembly: AssemblyVersion("0.0.1.47")]
+[assembly: AssemblyFileVersion("0.0.1.47")]
