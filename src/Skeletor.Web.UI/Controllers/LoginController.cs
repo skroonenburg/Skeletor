@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Web.Mvc;
 using AppHarbor.Web.Security;
-using Skeletor.Web.UI.ViewModels;
+using Skeletor.Web.UI.Pub.ViewModels;
+using Skeletor.Web.UI.Pub.ViewModels;
 
 namespace Skeletor.Web.UI.Controllers
 {
