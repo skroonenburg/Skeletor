@@ -1,27 +1,19 @@
 ﻿@model Skeletor.Web.UI.Pub.ViewModels.LoginViewModel
 
-@using (Html.BeginForm("Sign-In", "Login")) {
-<div class="row-fluid">
-        <div class="dialog">
-            <div class="block">
-                <p class="block-heading">Sign In</p>
-                <div class="block-body">
-                    <form>
-                        @Html.LabelFor(x => x.Username)
-                        @Html.TextBoxFor(x => x.Username, new {@class="span12"})
-                        @Html.ValidationMessageFor(x => x.Username)
-                        @Html.LabelFor(x => x.Password)
-                        @Html.PasswordFor(x => x.Password, new {@class="span12"})
-                        @Html.ValidationMessageFor(x => x.Password)
-                        @Html.ValidationSummary(true)
-                        <button type="submit" class="btn btn-primary pull-right">Sign in</button>
-                        <label class="remember-me"><input type="checkbox"> Remember me</label>
-                        <div class="clearfix"></div>
-                    </form>
-                </div>
-            </div>
-            <p><a href="reset-password.html">Forgot your password?</a></p>
-        </div>
-    </div>
+
+@using (Html.BeginForm("Sign-In", "Login"))
+{
+    @Html.LabelFor(x => x.Username)
+    @Html.TextBoxFor(x => x.Username, new { @class = "span12" })
+    @Html.ValidationMessageFor(x => x.Username)
+    @Html.LabelFor(x => x.Password)
+    @Html.PasswordFor(x => x.Password, new { @class = "span12" })
+    @Html.ValidationMessageFor(x => x.Password)
+    @Html.ValidationSummary(true)
     @Html.Hidden("ReturnUrl", Model.ReturnUrl)
+    <button type="submit" class="btn btn-primary pull-right">Sign in</button>
+    <label class="remember-me">
+        <input type="checkbox">
+        Remember me</label>
+    <p><a href="reset-password.html">Forgot your password?</a></p>
 }
