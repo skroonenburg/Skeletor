@@ -59,7 +59,7 @@ namespace Skeletor.Core.Security
 
         public User Build()
         {
-            return new User(new Name(FirstName, LastName), new Email(Email), new Password(Password,MinimumLength,MaximumLength, Expiry), new LockedOut()   );
+            return new User(new Username(UserName), new Name(FirstName, LastName), new Email(Email), new Password(Password,MinimumLength,MaximumLength, Expiry), new LockedOut()   );
         }
 
         public string UserName { get; private set; }

@@ -61,9 +61,14 @@
     <Compile Include="Framework\AggregateRootMap.cs" />
     <Compile Include="Framework\AuditAttribute.cs" />
     <Compile Include="Framework\EventAttribute.cs" />
+    <Compile Include="Framework\Guard.cs" />
+    <Compile Include="Framework\GuardException.cs" />
+    <Compile Include="Framework\GuardSemanticModel.cs" />
     <Compile Include="Framework\IActiveEntity.cs" />
     <Compile Include="Framework\ICommand.cs" />
     <Compile Include="Framework\ICommandHandler.cs" />
+    <Compile Include="Framework\IGuard.cs" />
+    <Compile Include="Framework\Invariant.cs" />
     <Compile Include="Framework\IRetrieveRepository.cs" />
     <Compile Include="Framework\IStoreRepository.cs" />
     <Compile Include="Framework\ISystemEntity.cs" />
@@ -95,7 +100,9 @@
     <Compile Include="Security\User.cs" />
     <Compile Include="Security\UserAggregrateMap.cs" />
     <Compile Include="Security\UserBuilder.cs" />
+    <Compile Include="Security\Username.cs" />
     <Compile Include="Security\UserRepository.cs" />
+    <Compile Include="Security\ValidationExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

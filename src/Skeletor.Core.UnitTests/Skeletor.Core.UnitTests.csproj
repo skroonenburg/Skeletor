@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="As a framework user\when_creating_a_new_validation_exception_object.cs" />
     <Compile Include="As a framework user\when_creating_a_new_validation_exception_and_adding_an_error.cs" />
+    <Compile Include="As a framework user\when_creating_a_username_object_with_no_text_entered.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

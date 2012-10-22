@@ -1,26 +1,19 @@
 ﻿using System;
 using System.Web.Mvc;
 using AppHarbor.Web.Security;
-using Skeletor.Web.UI.Pub.ViewModels;
+using Skeletor.Core.Security;
 using Skeletor.Web.UI.Pub.ViewModels;
 
 namespace Skeletor.Web.UI.Areas.Pub.Controllers
 {
 
-    public class User
-    {
-        public virtual string Username { get; set; }
-        public virtual string Password { get; set; }
-    }
-
     public class LoginController : Controller
     {
-        //
-      private readonly IAuthenticator _authenticator;
+      private readonly IAuthenticator authenticator;
 
         public LoginController(IAuthenticator authenticator)
         {
-            _authenticator = authenticator;
+            this.authenticator = authenticator;
         }
 
         [HttpGet]
@@ -45,15 +38,12 @@ namespace Skeletor.Web.UI.Areas.Pub.Controllers
             if (ModelState.IsValid)
             {
                 //user = _repository.GetAll<User>().SingleOrDefault(x => x.Username == sessionViewModel.Username);
-                if (user == null)
-                {
-                    ModelState.AddModelError(string.Empty, string.Format("Unable to locate user '{0}'", loginViewModel.Username));
-                }
+                ModelState.AddModelError(string.Empty, string.Format("Unable to locate user '{0}'", loginViewModel.Username));
             }
 
             if (ModelState.IsValid)
             {
-                if (!BCrypt.Net.BCrypt.Verify(loginViewModel.Password, user.Password))
+                if (!BCrypt.Net.BCrypt.Verify(loginViewModel.Password, user.Password.Text))
                 {
                     ModelState.AddModelError(string.Empty, "Computer says no.");
                 }
@@ -61,15 +51,13 @@ namespace Skeletor.Web.UI.Areas.Pub.Controllers
 
             if (ModelState.IsValid)
             {
-                _authenticator.SetCookie(user.Username);
+                authenticator.SetCookie(user.Username.Name);
                 var returnUrl = loginViewModel.ReturnUrl;
                 if (returnUrl != null)
                 {
                     Uri returnUri;
                     if (Uri.TryCreate(returnUrl, UriKind.Relative, out returnUri))
-                    {
                         return Redirect(loginViewModel.ReturnUrl);
-                    }
                 }
 
                 return RedirectToAction("Index", "Home");
@@ -81,7 +69,7 @@ namespace Skeletor.Web.UI.Areas.Pub.Controllers
         [HttpPost]
         public ActionResult Destroy()
         {
-            _authenticator.SignOut();
+            authenticator.SignOut();
             Session.Abandon();
             return RedirectToAction("Index", "Home");
         }
