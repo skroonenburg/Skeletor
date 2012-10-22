@@ -1,7 +1,9 @@
 ﻿@model Skeletor.Web.UI.Pub.ViewModels.LoginViewModel
 
+<div class="row-fluid">
+    <div class="span4">
 
-@using (Html.BeginForm("Sign-In", "Login"))
+        @using (Html.BeginForm("Sign-In", "Login"))
 {
     @Html.LabelFor(x => x.Username)
     @Html.TextBoxFor(x => x.Username, new { @class = "span12" })
@@ -17,3 +19,7 @@
         Remember me</label>
     <p><a href="reset-password.html">Forgot your password?</a></p>
 }
+
+    </div>
+</div>
+
