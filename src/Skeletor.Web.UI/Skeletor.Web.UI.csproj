@@ -142,6 +142,7 @@
     <Compile Include="Infrastructure\MVC\SkeletorViewEngine.cs" />
     <Compile Include="Infrastructure\MVC\WindsorControllerFactory.cs" />
     <Compile Include="Infrastructure\Nhibernate\NhibernateBootstrap.cs" />
+    <Compile Include="Infrastructure\Validation\Validator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Areas\Pub\ViewModels\LoginViewModel.cs" />
   </ItemGroup>

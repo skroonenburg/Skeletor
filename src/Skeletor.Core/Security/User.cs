@@ -52,6 +52,6 @@ namespace Skeletor.Core.Security
         public virtual LockedOut LockedOut { get; protected set; }
         public virtual bool IsActive { get; protected set; }
         public virtual bool IsSystem { get; protected set; }
-        public Username Username { get; private set; }
+        public virtual Username Username { get; protected set; }
     }
 }
