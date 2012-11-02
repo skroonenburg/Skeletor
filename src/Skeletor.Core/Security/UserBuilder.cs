@@ -70,6 +70,7 @@ namespace Skeletor.Core.Security
         public int MinimumLength { get; private set; }
         public int MaximumLength { get; private set; }
         public DateTime Expiry { get; private set; }
-        
+
+        public bool IsSystem { get; private set; }
     }
 }

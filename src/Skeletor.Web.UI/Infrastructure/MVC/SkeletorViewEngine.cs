@@ -22,6 +22,7 @@ namespace Skeletor.Web.UI.Infrastructure.MVC
             "~/Views/Shared/{0}.aspx",  
             "~/Views/Shared/{0}.ascx",  
             "~/Admin/Views/Shared/{0}.ascx",  
+            "~/Setup/Views/Shared/{0}.ascx",  
             "~/AnotherPath/Views/{0}.ascx"
             // etc
         };

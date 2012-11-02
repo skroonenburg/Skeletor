@@ -1,3 +1,4 @@
+using System;
 using FluentMigrator;
 
 namespace Skeletor.DatabaseMigrations
@@ -11,8 +12,7 @@ namespace Skeletor.DatabaseMigrations
         {
             GetTable()
                 .WithColumn("Name").AsString(200).NotNullable()
-                .WithColumn("IsActive").AsBoolean().NotNullable().WithDefaultValue(false)
-                .WithColumn("PasswordExpiry").AsDateTime().NotNullable();
+                .WithColumn("IsActive").AsBoolean().NotNullable().WithDefaultValue(false);
         }
 
         public override void Down()

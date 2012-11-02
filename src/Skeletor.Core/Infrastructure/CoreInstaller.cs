@@ -11,6 +11,7 @@ namespace Skeletor.Core.Infrastructure
         {
             container.Register(
                     Component.For<NHibernateTransactionInterceptor>().LifestyleSingleton(),
+                    
                     AllTypes.FromThisAssembly()
                             .Where(x => x.Name.EndsWith("Service"))
                             .Configure(x => x.Interceptors(InterceptorReference.ForType<NHibernateTransactionInterceptor>())
@@ -19,6 +20,16 @@ namespace Skeletor.Core.Infrastructure
                                              .Proxy.Hook(new ServicesProxyGenerationHook())
                                              .SelectInterceptorsWith(new ServiceInterceptorSelector())
                             ),
+
+                     AllTypes.FromThisAssembly()
+                            .Where(x => x.Name.EndsWith("Handler"))
+                            .Configure(x => x.Interceptors(InterceptorReference.ForType<NHibernateTransactionInterceptor>())
+                                             .Last
+                                             .LifestyleTransient()
+                                             .Proxy.Hook(new ServicesProxyGenerationHook())
+                                             .SelectInterceptorsWith(new ServiceInterceptorSelector())
+                            ).WithService.FirstInterface(),
+
                     AllTypes.FromThisAssembly().Where(x => x.Name.EndsWith("Repository")).Configure(x => x.LifestyleTransient())
                 );
         }

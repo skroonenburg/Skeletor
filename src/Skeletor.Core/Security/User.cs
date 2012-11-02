@@ -1,4 +1,5 @@
 ﻿using System;
+using Iesi.Collections.Generic;
 using Skeletor.Core.Framework;
 
 namespace Skeletor.Core.Security
@@ -19,6 +20,15 @@ namespace Skeletor.Core.Security
             EmailAddress = emailAddress;
             Password = password;
             LockedOut = lockedOut;
+        }
+
+
+        public virtual void PromoteToSystemAministrator(Role systemAdministratorRole)
+        {
+            IsSystem = true;
+
+            if (!Roles.Contains(systemAdministratorRole))
+                Roles.Add(systemAdministratorRole);
         }
 
         protected IGuard ValidateUserName(Username name)
@@ -53,5 +63,7 @@ namespace Skeletor.Core.Security
         public virtual bool IsActive { get; protected set; }
         public virtual bool IsSystem { get; protected set; }
         public virtual Username Username { get; protected set; }
+
+        public virtual ISet<Role> Roles { get; protected set; }
     }
 }

@@ -127,11 +127,12 @@
   <ItemGroup>
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Installation\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Installation\InstallationAreaRegistration.cs" />
     <Compile Include="Areas\Pub\Controllers\HomeController.cs" />
     <Compile Include="Areas\Pub\Controllers\LoginController.cs" />
     <Compile Include="Areas\Pub\PubAreaRegistration.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Areas\Installation\ViewModels\AdminAccountViewModel.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -227,6 +228,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\Pub\Views\Login\Sign-Up.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Installation\Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Installation\Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Installation\Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Installation\Views\_ViewStart.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Installation\Views\Home\Complete.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

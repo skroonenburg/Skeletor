@@ -31,6 +31,8 @@ namespace Skeletor.Core.Security
 
              Map(y => y.IsActive).Not.Nullable();
              Map(y => y.IsSystem).Not.Nullable();
+
+             HasManyToMany(y => y.Roles).AsSet().Cascade.SaveUpdate().Inverse().ParentKeyColumn("UserId");
          }
     }
 }

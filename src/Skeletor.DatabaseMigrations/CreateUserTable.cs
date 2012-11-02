@@ -28,7 +28,7 @@ namespace Skeletor.DatabaseMigrations
 
         public override void Down()
         {
-
+            Delete.Table("[User]");
         }
     }
 }

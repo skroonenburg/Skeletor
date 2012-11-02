@@ -39,6 +39,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AggregateMigration.cs" />
+    <Compile Include="CreateDefaultData.cs" />
     <Compile Include="CreateAuditActionTypeTable.cs" />
     <Compile Include="CreateAuditDetailTable.cs" />
     <Compile Include="CreateAuditTable.cs" />

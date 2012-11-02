@@ -17,7 +17,7 @@ namespace Skeletor.Web.UI.Areas.Pub
             context.MapRoute(
                 "Pub_default",
                 "{controller}/{action}/{id}",
-                new { action = "Index", id = UrlParameter.Optional }
+                new { controller="Home", action = "Index", id = UrlParameter.Optional }
             );
         }
     }
