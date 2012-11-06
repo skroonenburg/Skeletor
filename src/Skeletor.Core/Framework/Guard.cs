@@ -38,8 +38,7 @@ namespace Skeletor.Core.Framework
             model = new GuardSemanticModel();
         }
 
-        private Guard(Func<bool> predicate, string message)
-            : this()
+        private Guard(Func<bool> predicate, string message) : this()
         {
             model.Add(new Invariant(predicate, message));
         }
@@ -52,7 +51,7 @@ namespace Skeletor.Core.Framework
 
         public IEnumerable<string> EnforceInvariants()
         {
-            return model.Invariants.Where(x => x != null).Select(invariant => invariant.ValidationError());
+            return model.Invariants.Where(x => !x.Predicate() ).Select(invariant => invariant.ValidationError());
         }
 
         private GuardSemanticModel model;

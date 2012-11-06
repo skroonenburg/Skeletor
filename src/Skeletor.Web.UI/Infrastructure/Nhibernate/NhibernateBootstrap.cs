@@ -2,6 +2,7 @@
 using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
+using NHibernate.Cfg;
 using Skeletor.Core.Help;
 
 namespace Skeletor.Web.UI.Infrastructure.Nhibernate
@@ -16,8 +17,8 @@ namespace Skeletor.Web.UI.Infrastructure.Nhibernate
                     .Database(MsSqlConfiguration.MsSql2008
                     .ConnectionString( ConfigurationManager.ConnectionStrings["default"].ConnectionString)
                     .ShowSql)
+                    .ExposeConfiguration(cfg => cfg.SetProperty(Environment.CurrentSessionContextClass,"web"))
                  .BuildSessionFactory();
         }
-
     }
 }

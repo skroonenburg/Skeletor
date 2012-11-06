@@ -14,23 +14,23 @@ namespace Skeletor.Core.Infrastructure
                     
                     AllTypes.FromThisAssembly()
                             .Where(x => x.Name.EndsWith("Service"))
-                            .Configure(x => x.Interceptors(InterceptorReference.ForType<NHibernateTransactionInterceptor>())
-                                             .Last
-                                             .LifestyleTransient()
-                                             .Proxy.Hook(new ServicesProxyGenerationHook())
-                                             .SelectInterceptorsWith(new ServiceInterceptorSelector())
-                            ),
+                            .Configure(x => x.LifestyleTransient()
+                            ).WithService.FirstInterface(),
 
-                     AllTypes.FromThisAssembly()
+                    AllTypes.FromThisAssembly()
+                            .Where(x => x.Name.EndsWith("Repository") && !x.Name.Contains("RepositoryBase"))
+                            .Configure(x => x.LifestyleTransient()
+                            ).WithService.AllInterfaces(),
+
+                    AllTypes.FromThisAssembly()
                             .Where(x => x.Name.EndsWith("Handler"))
                             .Configure(x => x.Interceptors(InterceptorReference.ForType<NHibernateTransactionInterceptor>())
                                              .Last
                                              .LifestyleTransient()
                                              .Proxy.Hook(new ServicesProxyGenerationHook())
                                              .SelectInterceptorsWith(new ServiceInterceptorSelector())
-                            ).WithService.FirstInterface(),
+                            ).WithService.FirstInterface()
 
-                    AllTypes.FromThisAssembly().Where(x => x.Name.EndsWith("Repository")).Configure(x => x.LifestyleTransient())
                 );
         }
     }

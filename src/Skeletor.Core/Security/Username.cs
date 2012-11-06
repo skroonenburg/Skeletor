@@ -1,4 +1,5 @@
 using Skeletor.Core.Framework;
+using System;
 
 namespace Skeletor.Core.Security
 {
@@ -8,7 +9,7 @@ namespace Skeletor.Core.Security
 
         public Username(string text)
         {
-            Guard.On(() => !string.IsNullOrWhiteSpace(text),"Username is required")
+            Guard.On(() => !String.IsNullOrWhiteSpace(text),"Username is required")
                  .EnforceInvariants()
                  .ThrowIfAny();
             Name = text;

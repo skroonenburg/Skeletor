@@ -6,9 +6,11 @@ namespace Skeletor.Core.Security
 {
     public class User : Aggregate<Guid>, IActiveEntity, ISystemEntity
     {
-        protected User() { }
+        protected User() {
+            Roles = new HashedSet<Role>();
+        }
 
-        public User(Username username, Name name, Email emailAddress, Password password, LockedOut lockedOut)
+        public User(Username username, Name name, Email emailAddress, Password password, LockedOut lockedOut) : this()
         {
 
             Guard.Combine(ValidateUserName(username), ValidateName(name), ValidateEmail(emailAddress), ValidatePassword(password), ValidateLockedOut(lockedOut))

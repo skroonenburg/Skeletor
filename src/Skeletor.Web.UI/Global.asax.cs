@@ -4,13 +4,14 @@ using System.Web.Routing;
 using Skeletor.Web.UI.Infrastructure.IoC;
 using Skeletor.Web.UI.Infrastructure.Nhibernate;
 using NHibernate;
+using NHibernate.Context;
 
 namespace Skeletor.Web.UI
 {
     public class MvcApplication : System.Web.HttpApplication
     {
 
-        private ISessionFactory sessionFactory;
+        public static ISessionFactory SessionFactory {get;set;}
 
         protected void Application_Start()
         {
@@ -18,9 +19,23 @@ namespace Skeletor.Web.UI
             WebApiConfig.Register(GlobalConfiguration.Configuration);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
-            sessionFactory = NhibernateBootstrap.Configure();
+            SessionFactory = NhibernateBootstrap.Configure();
             IoC.Container = IoCBootStrap.Configure();
             ControllerBuilder.Current.SetControllerFactory(new WindsorControllerFactory(IoC.Container));
+        }
+
+
+        protected void Application_BeginRequest()
+        {
+            var session = SessionFactory.OpenSession();
+            CurrentSessionContext.Bind(session);
+        }
+
+
+        protected void Application_EndRequest()
+        {
+            var session = CurrentSessionContext.Unbind(SessionFactory);
+            session.Dispose();
         }
     }
 }

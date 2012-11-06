@@ -2,6 +2,8 @@
 using AppHarbor.Web.Security;
 using Castle.MicroKernel.Registration;
 using Castle.Windsor;
+using NHibernate;
+using Skeletor.Core.Infrastructure;
 
 namespace Skeletor.Web.UI.Infrastructure.IoC
 {
@@ -12,7 +14,7 @@ namespace Skeletor.Web.UI.Infrastructure.IoC
             IWindsorContainer container = new WindsorContainer();
             container.Install(new IWindsorInstaller[]
                                   {
-                                      new ControllersInstaller() 
+                                      new ControllersInstaller(), new CoreInstaller() 
                                   });
 
             // AppHarbor.Web.Security
@@ -22,6 +24,8 @@ namespace Skeletor.Web.UI.Infrastructure.IoC
                 Component.For<ICookieAuthenticationConfiguration>().ImplementedBy<ConfigFileAuthenticationConfiguration>().LifeStyle.Transient);
             container.Register(
                 Component.For<IAuthenticator>().ImplementedBy<CookieAuthenticator>().LifeStyle.Transient);
+            container.Register(
+                Component.For<ISessionFactory>().UsingFactoryMethod(x=> MvcApplication.SessionFactory).LifeStyle.Singleton);
 
             return container;
         }

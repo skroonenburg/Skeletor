@@ -7,6 +7,10 @@ namespace Skeletor.Core.Security
     {
          public UserAggregrateMap() : base("UserId")
          {
+             Component(x => x.Username, x =>
+             {
+                 x.Map(y => y.Name).Column("UserName").Not.Nullable();
+             });
 
              Component(x => x.Name, x =>
              {

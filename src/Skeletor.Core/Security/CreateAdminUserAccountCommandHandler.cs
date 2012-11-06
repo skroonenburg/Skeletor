@@ -12,7 +12,9 @@ namespace Skeletor.Core.Security
             this.roleRepository = roleRepository;
         }
 
-        public object Handle(CreateAdminUserAccountCommand command)
+
+        [Transaction("Create admin account")]
+        public object Handle(CreateAdminUserAccountCommand command)      
         {
             if(userDomainService.UserNameInUse(command.Username))
                 throw new NameInUseException();
@@ -27,8 +29,6 @@ namespace Skeletor.Core.Security
                                      .SetMaximumLength(30)
                                      .SetExpiry(DateTime.Now.AddDays(90))
                                      .Build();
-
-            
 
             user.PromoteToSystemAministrator(roleRepository.GetSystemAdministratorRole());
 
