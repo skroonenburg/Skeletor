@@ -14,16 +14,12 @@ namespace Skeletor.Core.Infrastructure
             var results = new List<IInterceptor>();
             AddTransactionSupportIfRequired(results, method, interceptors);
             
-
             return results.ToArray();
         }
 
         private void AddTransactionSupportIfRequired(ICollection<IInterceptor> results, MethodInfo method, IEnumerable<IInterceptor> interceptors)
         {
-            if (method.GetCustomAttributes(true).OfType<TransactionAttribute>().Any())
-            {
-                results.Add(interceptors.Single(x => x.GetType() == typeof (NHibernateTransactionInterceptor)));
-            }
+            results.Add(interceptors.Single(x => x.GetType() == typeof (NHibernateTransactionInterceptor)));
         }
     }
 }
