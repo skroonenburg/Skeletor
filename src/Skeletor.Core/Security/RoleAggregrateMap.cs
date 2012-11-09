@@ -9,6 +9,7 @@ namespace Skeletor.Core.Security
         {
             Map(y => y.Name).Not.Nullable();
             Map(y => y.IsActive).Not.Nullable();
+            HasManyToMany(y => y.Permissions).AsSet().Cascade.AllDeleteOrphan().ParentKeyColumn("RoleId");
         }
     }
 }

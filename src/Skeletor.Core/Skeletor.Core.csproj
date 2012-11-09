@@ -91,7 +91,11 @@
     <Compile Include="Infrastructure\ServiceInterceptorSelector.cs" />
     <Compile Include="Infrastructure\ServicesProxyGenerationHook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\IPermissionRepository.cs" />
     <Compile Include="Security\IRoleRepository.cs" />
+    <Compile Include="Security\Permission.cs" />
+    <Compile Include="Security\PermissionAggregrateMap.cs" />
+    <Compile Include="Security\PermissionRepository.cs" />
     <Compile Include="Security\Role.cs" />
     <Compile Include="Security\CreateAdminUserAccountCommandHandler.cs" />
     <Compile Include="Security\ICreateAdminUserAccountCommandHandler.cs" />

@@ -1,4 +1,5 @@
 ﻿using System;
+using Iesi.Collections.Generic;
 using Skeletor.Core.Framework;
 
 namespace Skeletor.Core.Security
@@ -20,6 +21,13 @@ namespace Skeletor.Core.Security
         protected virtual IGuard ValidateRoleName(string name)
         {
             return Guard.On(() => !string.IsNullOrEmpty(name), "Role name is required");
+        }
+
+        public void AssignPermission(Permission permission)
+        {
+            Guard.On(() => permission != null, "Unable to assign a non existent permission.").EnforceInvariants().ThrowIfAny();
+            if (Permissions.Contains(permission)) return;
+            Permissions.Add(permission);
         }
 
         public virtual bool Equals(Role other)
@@ -57,5 +65,6 @@ namespace Skeletor.Core.Security
 
         public virtual string Name { get; protected set; }
         public virtual bool IsActive { get; protected set; }
+        public virtual ISet<Permission> Permissions { get; protected set; }
     }
 }
