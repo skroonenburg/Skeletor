@@ -1,14 +1,11 @@
 ﻿using FluentMigrator;
 
-
 namespace Skeletor.DatabaseMigrations
 {
     [Migration(201210031600)]
     public class CreateUserTable : AggregateMigration
     {
-        public CreateUserTable() : base("User", "UserId")
-        {
-        }
+        public CreateUserTable() : base("User", "UserId") {}
 
         public override void Up()
         {

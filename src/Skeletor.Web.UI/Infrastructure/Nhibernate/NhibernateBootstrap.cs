@@ -3,6 +3,8 @@ using FluentNHibernate.Cfg;
 using FluentNHibernate.Cfg.Db;
 using NHibernate;
 using NHibernate.Cfg;
+using NHibernate.Event;
+using Skeletor.Core.Framework;
 using Skeletor.Core.Help;
 
 namespace Skeletor.Web.UI.Infrastructure.Nhibernate
@@ -18,6 +20,8 @@ namespace Skeletor.Web.UI.Infrastructure.Nhibernate
                     .ConnectionString( ConfigurationManager.ConnectionStrings["default"].ConnectionString)
                     .ShowSql)
                     .ExposeConfiguration(cfg => cfg.SetProperty(Environment.CurrentSessionContextClass,"web"))
+                    .ExposeConfiguration(cfg => cfg.AppendListeners(ListenerType.PreInsert, new IPreInsertEventListener[] { new AuditEventListener() }))
+                    .ExposeConfiguration(cfg => cfg.AppendListeners(ListenerType.PreUpdate, new IPreUpdateEventListener[] { new AuditEventListener() }))
                  .BuildSessionFactory();
         }
     }

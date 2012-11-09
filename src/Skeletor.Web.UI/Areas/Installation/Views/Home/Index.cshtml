@@ -6,7 +6,10 @@
 
 <div class="row-fluid">
     <div class="span4">
-        @using (Html.BeginForm( "CreateAdminAccount", "Home", new {Area = "Installation"})) {
+        @using (Html.BeginForm( "CreateAdminAccount", "Home", new {Area = "Installation"}))
+        {
+            Html.EnableClientValidation(true);
+            
             @Html.LabelFor(x => x.FirstName)
             @Html.TextBoxFor(x => x.FirstName, new { @class = "span12" })
             @Html.ValidationMessageFor(x => x.FirstName)

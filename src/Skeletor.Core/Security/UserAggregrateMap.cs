@@ -7,10 +7,7 @@ namespace Skeletor.Core.Security
     {
          public UserAggregrateMap() : base("UserId")
          {
-             Component(x => x.Username, x =>
-             {
-                 x.Map(y => y.Name).Column("UserName").Not.Nullable();
-             });
+             Component(x => x.Username, x => x.Map(y => y.Name).Column("UserName").Not.Nullable());
 
              Component(x => x.Name, x =>
              {
@@ -20,8 +17,8 @@ namespace Skeletor.Core.Security
 
              Component(x => x.Password, x =>
              {
-                 x.Map(y => y.Salt).Column("PasswordSalt").Not.Nullable();
-                 x.Map(y => y.Text).Column("Password").Not.Nullable();
+                 x.Map(y => y.Salt).Column("Salt").Not.Nullable();
+                 x.Map(y => y.Text).Column("PasswordHash").Not.Nullable();
                  x.Map(y => y.ExpiryDate).Column("PasswordExpiry").Not.Nullable();
              });
 
@@ -30,7 +27,7 @@ namespace Skeletor.Core.Security
              Component(x => x.LockedOut, x =>
              {
                  x.Map(y => y.IsLockedOut).Column("IsLockedOut").Not.Nullable();
-                 x.Map(y => y.LockedOutDate).Column("LockedOutDate").Nullable();
+                 x.Map(y => y.LastLockedOutUtcDate).Column("LastLockoutUtcDate").Nullable();
              });
 
              Map(y => y.IsActive).Not.Nullable();

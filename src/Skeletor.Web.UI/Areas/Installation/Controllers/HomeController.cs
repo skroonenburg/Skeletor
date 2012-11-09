@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
+using Skeletor.Core.Framework;
 using Skeletor.Core.Security;
 using Skeletor.Web.UI.Areas.Installation.ViewModels;
 
@@ -26,11 +27,7 @@ namespace Skeletor.Web.UI.Areas.Installation.Controllers
             if (!ModelState.IsValid)
                 return View("Index", viewModel);
 
-
-            _handler.Handle(new CreateAdminUserAccountCommand(viewModel.Username, viewModel.FirstName,
-                                                              viewModel.LastName, viewModel.Email, viewModel.Password));
-
-
+            _handler.Handle(DirectMapper.Map<CreateAdminUserAccountCommand, AdminAccountViewModel>(viewModel));
 
             return View("Complete");
         }

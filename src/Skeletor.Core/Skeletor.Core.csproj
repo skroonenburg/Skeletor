@@ -50,6 +50,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -60,11 +61,14 @@
     <Compile Include="Framework\Aggregate.cs" />
     <Compile Include="Framework\AggregateRootMap.cs" />
     <Compile Include="Framework\AuditAttribute.cs" />
+    <Compile Include="Framework\AuditEventListener.cs" />
+    <Compile Include="Framework\DirectMapper.cs" />
     <Compile Include="Framework\EventAttribute.cs" />
     <Compile Include="Framework\Guard.cs" />
     <Compile Include="Framework\GuardException.cs" />
     <Compile Include="Framework\GuardSemanticModel.cs" />
     <Compile Include="Framework\IActiveEntity.cs" />
+    <Compile Include="Framework\IAuditable.cs" />
     <Compile Include="Framework\ICommand.cs" />
     <Compile Include="Framework\ICommandHandler.cs" />
     <Compile Include="Framework\IGuard.cs" />
@@ -83,7 +87,6 @@
     <Compile Include="Framework\ValidationException.cs" />
     <Compile Include="Help\Help.cs" />
     <Compile Include="Infrastructure\CoreInstaller.cs" />
-    <Compile Include="Infrastructure\NHibernateAuditingInterceptor.cs" />
     <Compile Include="Infrastructure\NHibernateTransactionInterceptor.cs" />
     <Compile Include="Infrastructure\ServiceInterceptorSelector.cs" />
     <Compile Include="Infrastructure\ServicesProxyGenerationHook.cs" />

@@ -11,11 +11,11 @@ namespace Skeletor.Core.Security
 
         public LockedOut(DateTime lockedOutDate)
         {
-            LockedOutDate = lockedOutDate;
+            LastLockedOutUtcDate = lockedOutDate;
             IsLockedOut = true;
         }
 
-        public DateTime? LockedOutDate { get; private set; }
+        public DateTime? LastLockedOutUtcDate { get; private set; }
         public bool IsLockedOut { get; private set; }
     }
 }
