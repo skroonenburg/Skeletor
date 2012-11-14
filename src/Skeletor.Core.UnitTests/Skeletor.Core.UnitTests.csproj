@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="NSubstitute">
+      <HintPath>..\packages\NSubstitute.1.4.3.0\lib\NET40\NSubstitute.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>..\packages\NUnit.2.6.1\lib\nunit.framework.dll</HintPath>
     </Reference>
@@ -45,6 +48,8 @@
     <Compile Include="As a framework user\when_creating_a_new_validation_exception_object.cs" />
     <Compile Include="As a framework user\when_creating_a_new_validation_exception_and_adding_an_error.cs" />
     <Compile Include="As a framework user\when_creating_a_username_object_with_no_text_entered.cs" />
+    <Compile Include="As a site administrator\when_creating_an_admin_user_account_more_than_once.cs" />
+    <Compile Include="As a site administrator\when_creating_an_admin_user_account_with_a_valid_command.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
